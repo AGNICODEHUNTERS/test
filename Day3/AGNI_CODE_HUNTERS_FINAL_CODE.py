@@ -6,7 +6,9 @@ import seaborn as sns
 
 
 data = pd.read_csv("credit_card_default_train.csv") #importing train data
-testData=pd.read_csv("credit_card_default_test.csv") #importing test data
+data.dropna()
+testData=pd.read_csv("credit_card_default_test.csv")
+testData.dropna() #importing test data
 clID=testData.Client_ID
 ####function for converting literal values to numeric values###
 def numeric(dataSheet):
