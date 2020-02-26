@@ -198,7 +198,7 @@ from sklearn.model_selection import cross_val_score
 ###Random Forest Classifier###
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import ExtraTreesClassifier
-classifier = ExtraTreesClassifier(criterion= 'entropy', max_depth= 6, max_features= 5, n_estimators= 150, random_state=0)
+classifier = ExtraTreesClassifier()
 classifier.fit( X_train, Y_train )
 Y_pred = classifier.predict( X_test )
 ##Selecting the best parameters for classification###
