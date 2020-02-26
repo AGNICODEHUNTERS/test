@@ -200,7 +200,7 @@ from sklearn.model_selection import cross_val_score
 ###Random Forest Classifier###
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import ExtraTreesClassifier
-classifier = ExtraTreesClassifier()
+classifier = RandomForestClassifier(criterion= 'entropy', max_depth= 6, max_features= 5, n_estimators= 150, random_state=0)
 classifier.fit( X_train, Y_train )
 Y_pred = classifier.predict( X_test )
 ##Selecting the best parameters for classification###
@@ -272,6 +272,6 @@ print("Mean KN CrossVal Accuracy on Train Set Set %.2f, with std=%.2f" % (scores
 dataSheet=pd.DataFrame()
 dataSheet.insert(0,"Client_ID",clID)
 dataSheet.insert(1,"NEXT_MONTH_DEFAULT",pd.DataFrame(Y_pred))
-dataSheet.to_csv(r'AGNI_CODE_HUNTERS_Late2.csv',index=0)
+dataSheet.to_csv(r'AGNI_CODE_HUNTERS_Late4.csv',index=0)
 ###Plotting the graphs###
 #plt.show()
